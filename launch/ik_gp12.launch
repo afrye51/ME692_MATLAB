@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <launch>
-  <include file="$(find fanuc_lrmate200id_support)/launch/load_lrmate200id.launch" />
+  <include file="$(find motoman_gp12_support)/launch/load_gp12.launch" />
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     <rosparam param="source_list">["ik_joint_states"]</rosparam>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node pkg="ME692_MATLAB" type="ik_test_lrmate200id.py" name="ik_test_lrmate200id_node" output="screen"/>
+  <node pkg="ME692_MATLAB" type="ik_test_gp12.py" name="ik_test_gp12_node" output="screen"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find industrial_robot_client)/config/robot_state_visualize.rviz" required="true" />
 </launch>

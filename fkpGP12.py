@@ -38,6 +38,18 @@ def fkpGP12(t1, t2, t3, t4, t5, t6):
     return T
 
 
+# # Forward kinematics with angle directions as described in all materials, but flipped x axes
+# def fkpGP12(t1, t2, t3, t4, t5, t6):
+#     T = np.eye(4)
+#     T = T.dot(dh_transform(t1+np.pi, 0.450, -0.155, np.pi/2))
+#     T = T.dot(dh_transform(t2-np.pi/2, 0, -0.614, np.pi))
+#     T = T.dot(dh_transform(t3, 0, -0.200, np.pi/2))
+#     T = T.dot(dh_transform(t4, -0.640, 0, -np.pi/2))
+#     T = T.dot(dh_transform(t5, 0, 0, np.pi/2))
+#     T = T.dot(dh_transform(t6, -0.100, 0, np.pi))
+#     return T
+
+
 base = [0, 0, 0]
 
 print('Testing all zeros')

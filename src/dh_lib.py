@@ -42,12 +42,12 @@ def fk_gp12_arr(t):
 # Forward kinematics with angle directions as described in all materials
 def fk_lrmate200id(t1, t2, t3, t4, t5, t6):
     T = np.eye(4)
-    T = T.dot(dh_transform(t1, 0.450, 0.155, -np.pi/2))
-    T = T.dot(dh_transform(t2-np.pi/2, 0, 0.614, np.pi))
-    T = T.dot(dh_transform(t3, 0, 0.200, -np.pi/2))
-    T = T.dot(dh_transform(t4, -0.640, 0, np.pi/2))
+    T = T.dot(dh_transform(t1, 0.330, 0.050, -np.pi/2))
+    T = T.dot(dh_transform(t2-np.pi/2, 0, 0.330, np.pi))
+    T = T.dot(dh_transform(t3, 0, 0.035, -np.pi/2))
+    T = T.dot(dh_transform(t4, -0.335, 0, np.pi/2))
     T = T.dot(dh_transform(t5, 0, 0, -np.pi/2))
-    T = T.dot(dh_transform(t6, -0.100, 0, np.pi))
+    T = T.dot(dh_transform(t6, -0.080, 0, np.pi))
     return T
 
 

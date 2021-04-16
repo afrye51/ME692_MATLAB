@@ -25,6 +25,6 @@ Pz = T_03(3, 4);
 
 s4 = sin(t4);
 c4 = cos(t4);
-t6 = atan2(s4*nx - c4*ny, s4*tx - c4*ty);
+t6 = atan2(-s4*nx + c4*ny, s4*tx - c4*ty);
 
 end

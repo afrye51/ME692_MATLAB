@@ -23,7 +23,7 @@ Px = T_06(1, 4);
 Py = T_06(2, 4);
 Pz = T_06(3, 4);
 
-t1_1 = atan2(d6*by+Py,-d6*bx+Px);
-t1_2 = atan2(-d6*by-Py,d6*bx-Px); % = t1_1 +- pi
+t1_1 = atan2(d6*by + Py, d6*bx + Px);
+t1_2 = atan2(-d6*by - Py, -d6*bx - Px); % = t1_1 +- pi
 
 end

@@ -2,7 +2,7 @@ function T = fk_partial_lrmate200id(thetas)
 
 num_theta = size(thetas);
 T = eye(4);
-for i = 1:num_theta
+for i = 1:num_theta(2)
     if i == 1
         T = T * makeDHmatrix(thetas(i),-pi/2,0.330,0.050);
     elseif i == 2

@@ -26,12 +26,11 @@ Pz = T_06(3, 4);
 c1 = cos(t1);
 s1 = sin(t1);
 L3 = sqrt(a3^2 + d4^2);
-t3_add = atan2(a3, d4);
+t3_add = atan2(a3, -d4);
 x = d6*(bx*c1 + by*s1) - a1 + Px*c1 + Py*s1;
 y = d1 - Pz - bz*d6;
-c3p = (x^2 + y^2 - a2^2 - L3^2) / (2*a2*L3);
-s3p = sqrt(1 - c3p^2);
-t3_1 = atan2(s3p, c3p) - t3_add;
-t3_2 = atan2(-s3p, c3p) - t3_add;
+c3p = (x^2 + y^2 - a2^2 - L3^2) / (-2*a2*L3);
+t3_1 = acos(c3p) - t3_add - pi/2;
+t3_2 = -acos(c3p) - t3_add - pi/2;
 
 end

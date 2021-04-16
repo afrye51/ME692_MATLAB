@@ -23,7 +23,6 @@ Px = T_03(1, 4);
 Py = T_03(2, 4);
 Pz = T_03(3, 4);
 
-t4_1 = atan2(-bx, -by);
-t4_2 = atan2(bx, by);
-
+t4_1 = atan2(-by, -bx);
+t4_2 = atan2(by, bx);
 end

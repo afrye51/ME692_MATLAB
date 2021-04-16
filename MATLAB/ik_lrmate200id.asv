@@ -27,11 +27,11 @@ T_03 = cat(3, T_03_1, T_03_1, T_03_2, T_03_2, T_03_3, T_03_3, T_03_4, T_03_4);
 [t4_7, t4_8] = ik_lrmate200id_t4(T_03_4);
 t4 = [t4_1, t4_2, t4_3, t4_4, t4_5, t4_6, t4_7, t4_8];
 
-t5 = zeros(1, 8);
-t6 = zeros(1, 8);
+t5 = zeros(8);
+t6 = zeros(8);
 for i = 1:8
-    [t5(i)] = ik_lrmate200id_t5(T_03(:,:,i), t4(i));
-    [t6(i)] = ik_lrmate200id_t6(T_03(:,:,i), t4(i));
+    t5(i) = ik_lrmate200id_t5(T_03(:,:,i), t4(i));
+    t6(i) = ik_lrmate200id_t6(T_03(:,:,i), t4(i));
 end
 
 end

@@ -8,5 +8,3 @@ A45 = makeDHmatrix(theta5,-pi/2,0,0);
 A56 = makeDHmatrix(theta6,pi,-0.080,0);
 
 T = A01*A12*A23*A34*A45*A56;
-(A01*A12*A23)^-1*T
-A34*A45*A56

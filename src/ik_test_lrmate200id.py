@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 from __future__ import print_function
 import os
-import roslib
-import sys
-import rospy
+# import roslib
+# import sys
+# import rospy
 import numpy as np
 import time
-import sensor_msgs.msg
-import geometry_msgs.msg
+# import sensor_msgs.msg
+# import geometry_msgs.msg
 import ik_iterative_lrmate200id
 
-roslib.load_manifest('ME692_MATLAB')
+# roslib.load_manifest('ME692_MATLAB')
 
 
 class GP12_ik:
@@ -34,6 +34,10 @@ class GP12_ik:
 
 
 def main(args):
+    target_position = [0, 0, 100000]
+    target_position = np.array(target_position).T
+    target_joint_states = ik_iterative_lrmate200id.ik_iterative_lrmate200id(target_position)
+    print(target_joint_states)
     rospy.init_node('lrmate200id_iterative_ik_node', anonymous=True)
     ik = GP12_ik()
     try:
@@ -43,4 +47,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    main(None)#sys.argv)

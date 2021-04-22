@@ -1,4 +1,4 @@
-function [t2] = ik_lrmate200id_t2(T_06, t1, t3)
+function [t2] = ik_lrmate200id_t2_correct(T_06, t1, t3)
 
 a1 = 0.050;
 a2 = 0.330;
@@ -25,11 +25,19 @@ Pz = T_06(3, 4);
 
 c1 = cos(t1);
 s1 = sin(t1);
-L3 = sqrt(a3^2 + d4^2);
-c3p = cos(t3 + atan2(a3, -d4));
-s3p = sin(t3 + atan2(a3, -d4));
+a = a2;
+b = sqrt(a3^2 + d4^2);
+t3_add = atan2(a3, -d4);
+gamma = pi/2 + t3_add + t3;
+c = sqrt(a^2 + b^2 - 2*a*b*cos(gamma));
 x = d6*(bx*c1 + by*s1) - a1 + Px*c1 + Py*s1;
 y = d1 - Pz - bz*d6;
-t2 = atan2(x, -y) - atan2(-L3*s3p, a2+L3*c3p);
+t2p = atan2(y, x);
+
+cos_beta = (b^2 - a^2 - c^2) / (-2*a*c);
+sin_beta = b / c * sin(gamma);
+beta = atan2(sin_beta, cos_beta);
+
+t2 = pi/2 - (beta - t2p);
 
 end

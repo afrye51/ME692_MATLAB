@@ -1,7 +1,0 @@
-fun = @jac_det_solve;
-% [theta 2, theta 3, theta 4, theta 5]
-
-x0 = [0, 0, 0, 0];
-A = [];
-b = [];
-x = fmincon(fun,x0,A,b)

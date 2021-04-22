@@ -71,28 +71,29 @@ O_5 = A_05(1:3, 4);
 O_6 = A_06(1:3, 4);
 
 J = sym(zeros(6));
-moment_1 = simplify(cross(Z_00, (O_1 - O_6)), 'Steps', 50);
+moment_1 = simplify(cross(Z_00, (O_6)), 'Steps', 50);
 J(:, 1) = [Z_00; moment_1];
-moment_2 = simplify(cross(Z_01, (O_2 - O_6)), 'Steps', 50);
+moment_2 = simplify(cross(Z_01, (O_6 - O_1)), 'Steps', 50);
 J(:, 2) = [Z_01; moment_2];
-moment_3 = simplify(cross(Z_02, (O_3 - O_6)), 'Steps', 50);
+moment_3 = simplify(cross(Z_02, (O_6 - O_2)), 'Steps', 50);
 J(:, 3) = [Z_02; moment_3];
-moment_4 = simplify(cross(Z_03, (O_4 - O_6)), 'Steps', 50);
+moment_4 = simplify(cross(Z_03, (O_6 - O_3)), 'Steps', 50);
 J(:, 4) = [Z_03; moment_4];
-moment_5 = simplify(cross(Z_04, (O_5 - O_6)), 'Steps', 50);
+moment_5 = simplify(cross(Z_04, (O_6 - O_4)), 'Steps', 50);
 J(:, 5) = [Z_04; moment_5];
-moment_6 = 0;
-J(:, 6) = [Z_05; moment_1];
+moment_6 = simplify(cross(Z_05, (O_6 - O_5)), 'Steps', 50);
+J(:, 6) = [Z_05; moment_6];
 J
-singularities = simplify(det(J), 'Steps', 100);
+singularities = simplify(det(J), 'Steps', 100)
+J_inv = simplify(J^-1, 'Steps', 100)
 
-a1 = 0.050;
-a2 = 0.330;
-a3 = 0.035;
-d1 = 0.330;
-d4 = -0.335;
-d6 = -0.080;
-subs(singularities)
+% a1 = 0.050;
+% a2 = 0.330;
+% a3 = 0.035;
+% d1 = 0.330;
+% d4 = -0.335;
+% d6 = -0.080;
+% simplify(subs(singularities))
 
 % t1 = 0;
 % t2 = 0;

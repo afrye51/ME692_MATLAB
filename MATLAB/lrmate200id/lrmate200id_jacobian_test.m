@@ -1,3 +1,13 @@
+% Description:
+% Compares our jacobian to Peter Corke's toolbox' jacobian using randomly
+%   generated points
+
+% Parameters:
+% N/A
+
+% Returns:
+% J_error - elementwise difference between our jacobian and the toolbox's
+%   jacobian (should be zero)
 function [J_err] = lrmate200id_jacobian_test
 
 theta_min = -pi;

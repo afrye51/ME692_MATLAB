@@ -1,3 +1,12 @@
+% Description:
+% Computes and returns all possible theta 5s
+
+% Parameters:
+% T_03 - The transform from the base frame to link 3
+% t4 - the theta 4 to use
+
+% Returns:
+% t5 - the IK solution
 function [t5] = ik_lrmate200id_t5(T_03, t4)
 
 a1 = 0.050;

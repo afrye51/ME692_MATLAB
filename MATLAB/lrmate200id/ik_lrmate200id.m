@@ -1,3 +1,18 @@
+% Description:
+% Computes and returns all 8 possible inverse kinematics solutions for the
+% lrmate200id robot
+
+% Parameters:
+% x - end effector x translation in the global frame
+% y - end effector y translation in the global frame
+% z - end effector z translation in the global frame
+% rz - end effector z rotation in the global frame
+% ry - end effector y rotation in the global frame
+% rx - end effector x rotation in the global frame
+
+% Returns:
+% t1 ... t6 - an 8-element array of each IK solution for the respective
+%   angle
 function [t1, t2, t3, t4, t5, t6] = ik_lrmate200id(x, y, z, rx, ry, rz)
 
 T_06 = T_all(x, y, z, rz, ry, rx);

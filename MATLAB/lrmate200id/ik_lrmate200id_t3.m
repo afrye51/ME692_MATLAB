@@ -1,3 +1,12 @@
+% Description:
+% Computes and returns all possible theta 3s
+
+% Parameters:
+% T_06 - The end effector transform
+% t1 - the theta 1 to use
+
+% Returns:
+% t3_1 ... t3_2 - the two IK solutions
 function [t3_1, t3_2] = ik_lrmate200id_t3(T_06, t1)
 
 a1 = 0.050;

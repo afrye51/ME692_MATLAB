@@ -1,4 +1,12 @@
-function [t6] = ik_lrmate200id_t6(T_03, t4)
+% Description:
+% Computes and returns all possible theta 4s
+
+% Parameters:
+% T_03 - The transform from the base frame to link 3
+
+% Returns:
+% t4_1 ... t4_2 - the two IK solutions
+function [t4_1, t4_2] = ik_lrmate200id_t4(T_03)
 
 a1 = 0.050;
 a2 = 0.330;
@@ -23,8 +31,6 @@ Px = T_03(1, 4);
 Py = T_03(2, 4);
 Pz = T_03(3, 4);
 
-s4 = sin(t4);
-c4 = cos(t4);
-t6 = atan2(-s4*nx + c4*ny, s4*tx - c4*ty);
-
+t4_1 = atan2(-by, -bx);
+t4_2 = atan2(by, bx);
 end

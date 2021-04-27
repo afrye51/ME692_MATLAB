@@ -1,3 +1,14 @@
+% Description:
+% Returns a partial DH transform matrix, using only the given angles. If
+% given all 6 angles, returns the normal end-effector DH transform
+
+% Parameters:
+% thetas - An array of 1-6 elements representing ordered angles. 
+
+% Returns:
+% T - Homogenous transform matrix from the origin to the end of link
+%   len(thetas)
+
 function T = fk_partial_lrmate200id(thetas)
 
 num_theta = size(thetas);

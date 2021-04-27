@@ -1,4 +1,6 @@
-% syms c1 s1 c2 s2 c3 s3 c4 s4 c5 s5 c6 s6 a1 a2 a3 d1 d4 d6 nx ny nz bx by bz tx ty tz Px Py Pz
+% Description:
+% Prints the symbolic equations for the jacobian and singularities
+
 syms t1 t2 t3 t4 t5 t6 a1 a2 a3 d1 d4 d6 real
 c1 = cos(t1);
 s1 = sin(t1);
@@ -85,29 +87,4 @@ moment_6 = simplify(cross(Z_05, (O_6 - O_5)), 'Steps', 50);
 J(:, 6) = [Z_05; moment_6];
 J
 singularities = simplify(det(J), 'Steps', 100)
-J_inv = simplify(J^-1, 'Steps', 100)
-
-% a1 = 0.050;
-% a2 = 0.330;
-% a3 = 0.035;
-% d1 = 0.330;
-% d4 = -0.335;
-% d6 = -0.080;
-% simplify(subs(singularities))
-
-% t1 = 0;
-% t2 = 0;
-% t3 = 0;
-% t4 = 0;
-% t5 = 0;
-% t6 = 0;
-% a1 = 0.050;
-% a2 = 0.330;
-% a3 = 0.035;
-% d1 = 0.330;
-% d4 = -0.335;
-% d6 = -0.080;
-% 
-% subs(Z_00)
-% subs(Z_01)
-% subs(Z_02)
+% J_inv = simplify(J^-1, 'Steps', 100)

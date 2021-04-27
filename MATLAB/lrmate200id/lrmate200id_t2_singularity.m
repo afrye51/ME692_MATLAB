@@ -1,4 +1,13 @@
-function [t2] = lrmate200id_singularity(t3)
+% Description:
+% Computes and returns theta 2 that causes a shoulder singularity with the
+%   given theta 3
+
+% Parameters:
+% t3 - Theta 3 at which to compute t2
+
+% Returns:
+% t2 - the two theta 2 solutions which cause a shoulder singularity
+function [t2] = lrmate200id_t2_singularity(t3)
 
 a1 = 0.050;
 a2 = 0.330;

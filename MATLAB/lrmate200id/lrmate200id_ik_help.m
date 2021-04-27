@@ -1,4 +1,6 @@
-% syms c1 s1 c2 s2 c3 s3 c4 s4 c5 s5 c6 s6 a1 a2 a3 d1 d4 d6 nx ny nz bx by bz tx ty tz Px Py Pz
+% Description:
+% Prints the symbolic equations used to solve for the inverse kinematics
+
 syms t1 t2 t3 t4 t5 t6 a1 a2 a3 d1 d4 d6 nx ny nz bx by bz tx ty tz Px Py Pz
 c1 = cos(t1);
 s1 = sin(t1);

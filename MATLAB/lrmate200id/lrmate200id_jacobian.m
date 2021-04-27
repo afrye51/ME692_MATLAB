@@ -1,4 +1,12 @@
-function [J] = lrmate200id_jacobian(J_true, t1, t2, t3, t4, t5, t6)
+% Description:
+% Computes and returns the jacobian
+
+% Parameters:
+% t1 ... t6 - The joint angles
+
+% Returns:
+% J - The jacobian at this joint state
+function [J] = lrmate200id_jacobian(t1, t2, t3, t4, t5, t6)
 
 a1 = 0.050;
 a2 = 0.330;
@@ -77,43 +85,6 @@ O_4 = A_04(1:3, 4);
 O_5 = A_05(1:3, 4);
 O_6 = A_06(1:3, 4);
 
-O_61 = O_6 - O_1;
-O_62 = O_6 - O_2;
-O_63 = O_6 - O_3;
-O_64 = O_6 - O_4;
-O_65 = O_6 - O_5;
-
-c01 = cross(Z_00, O_61);
-c02 = cross(Z_00, O_62);
-c03 = cross(Z_00, O_63);
-c04 = cross(Z_00, O_64);
-c05 = cross(Z_00, O_65);
-c11 = cross(Z_01, O_61);
-c12 = cross(Z_01, O_62);
-c13 = cross(Z_01, O_63);
-c14 = cross(Z_01, O_64);
-c15 = cross(Z_01, O_65);
-c21 = cross(Z_02, O_61);
-c22 = cross(Z_02, O_62);
-c23 = cross(Z_02, O_63);
-c24 = cross(Z_02, O_64);
-c25 = cross(Z_02, O_65);
-c31 = cross(Z_03, O_61);
-c32 = cross(Z_03, O_62);
-c33 = cross(Z_03, O_63);
-c34 = cross(Z_03, O_64);
-c35 = cross(Z_03, O_65);
-c41 = cross(Z_04, O_61);
-c42 = cross(Z_04, O_62);
-c43 = cross(Z_04, O_63);
-c44 = cross(Z_04, O_64);
-c45 = cross(Z_04, O_65);
-c51 = cross(Z_05, O_61);
-c52 = cross(Z_05, O_62);
-c53 = cross(Z_05, O_63);
-c54 = cross(Z_05, O_64);
-c55 = cross(Z_05, O_65);
-
 J = zeros(6);
 moment_1 = cross(Z_00, (O_6));
 J(:, 1) = [Z_00; moment_1];
@@ -125,7 +96,7 @@ moment_4 = cross(Z_03, (O_6 - O_3));
 J(:, 4) = [Z_03; moment_4];
 moment_5 = cross(Z_04, (O_6 - O_4));
 J(:, 5) = [Z_04; moment_5];
-moment_6 = cross(Z_05, (O_6 - O_5));%[0; 0; 0];
+moment_6 = cross(Z_05, (O_6 - O_5));
 J(:, 6) = [Z_05; moment_6];
 
 end

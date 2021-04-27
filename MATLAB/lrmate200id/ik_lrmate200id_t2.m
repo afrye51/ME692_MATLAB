@@ -1,4 +1,14 @@
-function [t2] = ik_lrmate200id_t2_correct(T_06, t1, t3)
+% Description:
+% Computes and returns all possible theta 2s
+
+% Parameters:
+% T_06 - The end effector transform
+% t1 - the theta 1 to use
+% t3 - the theta 3 to use
+
+% Returns:
+% t2 - the IK solution
+function [t2] = ik_lrmate200id_t2(T_06, t1, t3)
 
 a1 = 0.050;
 a2 = 0.330;

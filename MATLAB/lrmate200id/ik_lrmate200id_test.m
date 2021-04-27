@@ -1,3 +1,13 @@
+% Description:
+% Compares the forward and inverse kinematics using randomly generated
+%   points
+
+% Parameters:
+% N/A
+
+% Returns:
+% T_ik_error - elementwise difference between the transform from the
+%   forward and inverse kinematics, for all 8 IK solutions (should be zeros)
 function [T_ik_error] = ik_lrmate200id_test
 
 theta_min = -pi;
